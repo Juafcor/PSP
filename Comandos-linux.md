@@ -181,20 +181,31 @@ ping Google.com
 11. Finaliza el proceso de Firefox usando su PID.
 ```bash
 
-
+pgrep firefox
+kill <PID_de_Firefox>
 
 ```
  
 12. Vuelve a lanzarlo y esta vez deténlo, luego reactívalo.
 ```bash
 
-
-
+firefox &
+kill -s STOP <PID_de_Firefox>
+kill -s CONT <PID_de_Firefox>
 ```
  
 13. Crea un script que capture la señal de interrupción (Ctrl+C) y muestre un mensaje en lugar de cerrarse.
 ```bash
 
+#!/bin/bash
+trap 'echo "Has presionado ctrl + c, se ha capturado la señal de interrupción."' SIGINT
+echo "Ejecutando script. Presiona ctrl + c para leer el mensaje."
+sleep 300
+
+chmod +x capturador.sh
+./capturador.sh
+
+    
 
 
 ```
@@ -207,21 +218,23 @@ ping Google.com
 14. Consulta el estado del servicio de conexión remota (por ejemplo, `ssh`).
 ```bash
 
-
+sudo systemctl status ssh
 
 ```
  
 15. Inicia dicho servicio si está instalado.
 ```bash
 
-
+sudo systemctl start ssh
 
 ```
  
 16. Desactívalo del arranque automático y vuelve a activarlo.
 ```bash
 
+sudo systemctl disable ssh
 
+sudo systemctl enable ssh
 
 ```
  
@@ -233,42 +246,41 @@ ping Google.com
 17. Lista todos los archivos, incluidos los ocultos, en tu directorio personal.
 ```bash
 
-
+ls -la ~
 
 ```
  
 18. Crea una carpeta llamada `prueba`.
 ```bash
 
-
+mkdir prueba
 
 ```
  
 19. Dentro de esa carpeta, crea un archivo `notas.txt` que contenga el texto “Hola Linux”.
 ```bash
-
-
+echo "Hola Linux" > prueba/notas.txt
 
 ```
  
 20. Copia ese archivo con otro nombre.
 ```bash
 
-
+cp prueba/notas.txt prueba/cp_notas.txt
 
 ```
  
 21. Renombra el archivo copiado.
 ```bash
 
-
+mv prueba/cp_notas.txt prueba/notas2.txt
 
 ```
  
 22. Borra el archivo renombrado.
 ```bash
 
-
+rm prueba/notas2.txt
 
 ```
  
@@ -280,35 +292,35 @@ ping Google.com
 23. Redirige la salida de un listado de archivos a un archivo llamado `listado.txt`.
 ```bash
 
-
+ls > listado.txt
 
 ```
  
 24. Añade una nueva línea al final del mismo archivo con el texto "Fin del listado".
 ```bash
 
-
+echo "Fin del listado" >> listado.txt
 
 ```
  
 25. Redirige los errores (2) de una operación no válida (`let a=3/0`) a un dispositivo nulo para ignorarlos.
 ```bash
 
-
+let a=3/0 2> /dev/null
 
 ```
  
 26. Filtra de una lista de procesos únicamente aquellos que contengan la palabra “bash”.
 ```bash
 
-
+ps aux | grep bash
 
 ```
  
 27. Muestra solo las últimas 5 líneas del archivo `listado.txt`.
 ```bash
 
-
+tail -n 5 listado.txt
 
 ```
  
@@ -353,20 +365,20 @@ ping Google.com
 32. Comprueba la conectividad con el servidor `google.com` enviando unos pocos paquetes.
 ```bash
 
-
+ping -c 4 google.com
 
 ```
  
 33. Muestra la configuración de tus interfaces de red.
 ```bash
-
-
+ip a
 
 ```
  
 34. Revisa qué puertos están en escucha en tu máquina.
 ```bash
 
+netstat -tuln
 
 
 ```
@@ -374,28 +386,28 @@ ping Google.com
 35. Consulta la dirección IP asociada al dominio `google.com`.
 ```bash
 
-
+nslookup google.com
 
 ```
  
 36. Realiza la misma consulta de resolución DNS usando otra herramienta distinta.
 ```bash
 
-
+dig google.com
 
 ```
  
 37. Conéctate de forma remota a otra máquina mediante un protocolo seguro (si tienes acceso).
 ```bash
 
-
+ssh juan@localhost -p 2222
 
 ```
  
 38. Copia un archivo desde tu máquina a otra mediante una conexión remota segura.
 ```bash
 
-
+scp archivo.txt juan@localhost/home
 
 ```
  
@@ -407,20 +419,21 @@ ping Google.com
 39. Crea un usuario de prueba llamado `alumno1`.
 ```bash
 
-
+sudo useradd alumno1
 
 ```
  
 40. Cámbiale la contraseña.
 ```bash
 
-
+sudo passwd alumno1
 
 ```
  
 41. Cambia los permisos de un archivo a `755`.
 ```bash
 
+chmod 755 prueba2.txt
 
 
 ```
@@ -428,14 +441,14 @@ ping Google.com
 42. Cambia el propietario de un archivo a otro usuario.
 ```bash
 
-
+sudo chown alumno1 archivo.txt
 
 ```
  
 43. Elimina el usuario creado.
 ```bash
 
-
+sudo userdel alumno1
 
 ```
  
