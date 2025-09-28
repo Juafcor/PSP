@@ -1,0 +1,59 @@
+ 89  2025-09-29 09:02:21 export HISTSIZE=1000
+ 90  2025-09-29 09:02:23 export HISTFILESIZE=20000
+ 91  2025-09-29 09:02:25 export HISTTIMEFORMAT="%f %t "
+ 92  2025-09-29 09:02:40 history
+ 93  2025-09-29 09:03:00 vi ~/.bashrc
+ 94  2025-09-29 09:03:20 uname -a
+ 95  2025-09-29 09:03:30 uname -r
+ 96  2025-09-29 09:03:40 df -h
+ 97  2025-09-29 09:03:50 du -sh /etc
+ 98  2025-09-29 09:03:55 du --help
+ 99  2025-09-29 09:04:00 man du
+100  2025-09-29 09:04:10 free -h
+101  2025-09-29 09:04:25 ps aux
+102  2025-09-29 09:04:35 top
+103  2025-09-29 09:04:50 htop
+104  2025-09-29 09:05:10 sudo apt install htop
+105  2025-09-29 09:05:30 htop
+106  2025-09-29 09:05:50 ps -lax
+107  2025-09-29 09:06:00 ps -lax | grep tty
+108  2025-09-29 09:06:10 pstree
+109  2025-09-29 09:06:20 ping google.com &
+110  2025-09-29 09:06:35 pgrep firefox
+111  2025-09-29 09:06:40 kill 1435
+112  2025-09-29 09:06:50 firefox &
+113  2025-09-29 09:06:55 kill -s STOP 1435
+114  2025-09-29 09:07:00 kill -s CONT 1435
+115  2025-09-29 09:07:10 vim capturador.sh
+116  2025-09-29 09:07:28 chmod +x capturador.sh
+117  2025-09-29 09:07:35 ./capturador.sh
+118  2025-09-29 09:07:50 sudo systemctl status ssh
+119  2025-09-29 09:08:00 sudo systemctl start ssh
+120  2025-09-29 09:08:10 sudo systemctl disable ssh
+121  2025-09-29 09:08:20 sudo systemctl enable ssh
+122  2025-09-29 09:08:30 ls -la ~
+123  2025-09-29 09:08:40 mkdir prueba
+124  2025-09-29 09:08:50 echo "Hola Linux" > prueba/notas.txt
+125  2025-09-29 09:09:00 cp prueba/notas.txt prueba/cp_notas.txt
+126  2025-09-29 09:09:10 mv prueba/cp_notas.txt prueba/notas2.txt
+127  2025-09-29 09:09:20 rm prueba/notas2.txt
+128  2025-09-29 09:09:30 ls > listado.txt
+129  2025-09-29 09:09:40 echo "Fin del listado" >> listado.txt
+130  2025-09-29 09:09:50 let a=3/0 2>/dev/null
+131  2025-09-29 09:10:00 ps aux | grep bash
+132  2025-09-29 09:10:10 tail -n 5 listado.txt
+133  2025-09-29 09:10:20 mkfifo cola
+134  2025-09-29 09:10:30 echo "probando espera" > cola
+135  2025-09-29 09:10:40 ping -c 4 google.com
+136  2025-09-29 09:10:50 ip a
+137  2025-09-29 09:11:00 netstat -tuln
+138  2025-09-29 09:11:10 nslookup google.com
+139  2025-09-29 09:11:20 dig google.com
+140  2025-09-29 09:11:30 ssh juan@juanserver -p 2222
+141  2025-09-29 09:11:40 scp archivo.txt juan@juanserver/home
+142  2025-09-29 09:11:50 sudo useradd alumno1
+143  2025-09-29 09:12:00 sudo passwd alumno1
+144  2025-09-29 09:12:10 chmod 755 prueba2.txt
+145  2025-09-29 09:12:20 sudo chown alumno1 archivo.txt
+146  2025-09-29 09:12:30 sudo userdel alumno1
+history | tail -n 30
