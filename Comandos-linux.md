@@ -92,11 +92,11 @@ man du
 5. Consulta la memoria RAM disponible y usada.
 ```bash
 
-
+free -h
 
 ```
  
-free -h
+
 ---
 
 ## **Bloque 2: Procesos**
