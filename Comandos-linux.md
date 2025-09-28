@@ -400,14 +400,14 @@ dig google.com
 37. Conéctate de forma remota a otra máquina mediante un protocolo seguro (si tienes acceso).
 ```bash
 
-ssh juan@localhost -p 2222
+ssh juan@juanserver -p 2222
 
 ```
  
 38. Copia un archivo desde tu máquina a otra mediante una conexión remota segura.
 ```bash
 
-scp archivo.txt juan@localhost/home
+scp archivo.txt juan@juanserver/home
 
 ```
  
