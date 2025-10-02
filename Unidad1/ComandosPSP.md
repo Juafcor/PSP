@@ -198,10 +198,11 @@ kill -s CONT <PID_de_Firefox>
 ```bash
 
 #!/bin/bash
-trap 'echo "Has presionado ctrl + c, se ha capturado la señal de interrupción."' SIGINT
-echo "Ejecutando script. Presiona ctrl + c para leer el mensaje."
-sleep 300
-
+trap 'echo "Has presionado ctrl + c, Pero no me paro."' SIGINT
+while true do:
+    echo "Ejecutando . . . Pulsa Ctrl+c para probar"
+    sleep 3
+done
 chmod +x capturador.sh
 ./capturador.sh
 
